@@ -1,3 +1,5 @@
+let valorTotal = 0
+
 function adicionar() {
     let item = document.getElementById('produto').value;
     let partes = item.split(' - R$');
@@ -18,8 +20,8 @@ function adicionar() {
     produto.innerHTML = `<span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${valorProduto}</span>`;
     listaProdutos.appendChild(produto);
     
-        
+    valorTotal += (valorProduto * quantidade);
     
-        
-
+    document.getElementById('valor-total').textContent = `R$${valorTotal}`;
 }
+
