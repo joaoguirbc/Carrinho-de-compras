@@ -14,6 +14,7 @@ function adicionar() {
         return;
     }
 
+    // Exibe o produto adicionado no carrinho
     let listaProdutos = document.getElementById('lista-produtos');
     let produto = document.createElement('section');
     produto.classList.add('carrinho__produtos__produto');
@@ -21,7 +22,15 @@ function adicionar() {
     listaProdutos.appendChild(produto);
     
     valorTotal += (valorProduto * quantidade);
-    
+    // Atualiza o valor do carrinho de compras
     document.getElementById('valor-total').textContent = `R$${valorTotal}`;
+}
+
+function limpar() {
+    valorTotal = 0;         // Reseta o valor total para 0
+
+    document.getElementById('valor-total').textContent = `R$${valorTotal}`;        // Atualiza o valor do carrinho de compras
+
+    document.getElementById('lista-produtos').innerHTML = '';         // Remove os elementos do carrinho de compras
 }
 
