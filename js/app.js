@@ -1,4 +1,6 @@
-let valorTotal = 0
+let valorTotal;
+
+limpar()
 
 function adicionar() {
     let item = document.getElementById('produto').value;
@@ -24,6 +26,8 @@ function adicionar() {
     valorTotal += (valorProduto * quantidade);
     // Atualiza o valor do carrinho de compras
     document.getElementById('valor-total').textContent = `R$${valorTotal}`;
+
+    document.getElementById('quantidade').value = 0
 }
 
 function limpar() {
